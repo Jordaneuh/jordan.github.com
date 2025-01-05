@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expositions</title>
+    <link rel="stylesheet" href="/styles/expositions.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="Neco" href="/fonts/Neco_Complete/Fonts/OTF/Neco-Black.otf">
+</head>
+
+<body>
+    <header>
+        <div class="modesombre">
+            <input type="checkbox" class="button-sombre" id="darkmode">
+            <label for="darkmode" class="btnsombre-encadre">
+                <div class="circle-btnsombre"></div>
+            </label>
+        </div>       
+        <a href="index.html"><img class="image_taille" src="/images/Page_accueil/logo_musée_vectorisé.png" alt="logo"></a>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div> <!-- Menu Burger -->
+            <div class="overlay" onclick="toggleMenu()"></div> <!-- Arrière-plan de l'overlay -->
+            <ul id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="expositions.html">Expositions</a></li>
+                <li><a href="maintenance.html">Collection</a></li>
+                <li><a href="maintenance.html">Boutique</a></li>
+                <li><a href="maintenance.html">Offre</a></li>
+                <li><a href="maintenance.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro-section">
+            <img class="banniere" src="/images/Expositions/banniere-exposition.png" alt="banniere expo">
+            
+        </div>
+
+        <!-- Sections principales -->
+        <section class="accueil">
+            <div class="giga">
+                <img class="carré" src="/images/Expositions/exposition_carre.svg" alt="Exposition">
+            </div>
+        </section>
+
+        <!-- Grille d'éléments -->
+        <div class="grid">
+            <!-- Élément 1 -->
+            <div class="item">
+                <a href="maintenance.html" class="box">
+                    <img src="images/Expositions/expo1.jpg" alt="Exposition sur la Préhistoire et la Protohistoire" class="photo">
+                </a>
+                <div class="sub-box">
+                    <p>Préhistoire et Protohistoire</p>
+                </div>
+            </div>
+
+            <!-- Élément 2 -->
+            <div class="item">
+                <a href="maintenance.html" class="box">
+                    <img src="images/Expositions/expo2.jpg" alt="Exposition sur Bordeaux et l'Aquitaine à l'époque gallo-romaine" class="photo">
+                </a>
+                <div class="sub-box">
+                    <p>Bordeaux et l'Aquitaine à l'époque gallo-romaine</p>
+                </div>
+            </div>
+
+            <!-- Élément 3 -->
+            <div class="item">
+                <a href="maintenance.html" class="box">
+                    <img src="images/Expositions/expo3.jpg" alt="Exposition sur l'Aquitaine sous les rois d'Angleterre et son retour à la France" class="photo">
+                </a>
+                <div class="sub-box">
+                    <p>L'Aquitaine sous les rois d'Angleterre et le retour à la Guyenne française</p>
+                </div>
+            </div>
+
+            <!-- Élément 4 -->
+            <div class="item">
+                <a href="maintenance.html" class="box">
+                    <img src="images/Expositions/expo4.jpg" alt="Exposition de Montaigne à l'époque du Roi-Soleil" class="photo">
+                </a>
+                <div class="sub-box">
+                    <p>De Montaigne au Roi-Soleil</p>
+                </div>
+            </div>
+
+            <!-- Élément 5 -->
+            <div class="item">
+                <a href="maintenance.html" class="box">
+                    <img src="images/Expositions/expo5.jpg" alt="Exposition sur Bordeaux au XVIIIe siècle, le commerce atlantique et l'esclavage" class="photo">
+                </a>
+                <div class="sub-box">
+                    <p>Bordeaux au XVIIIe siècle, le commerce atlantique et l'esclavage</p>
+                </div>
+            </div>
+
+            <!-- Élément 6 -->
+            <div class="item">
+                <a href="maintenance.html" class="box">
+                    <img src="images/Expositions/expo6.jpg" alt="Exposition sur Bordeaux comme port mondial entre 1800 et 1939" class="photo">
+                </a>
+                <div class="sub-box">
+                    <p>Bordeaux port(e) du monde : 1800-1939</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Musée d'Aquitaine</h2>
+                <p>Le Musée d'Aquitaine présente l'histoire de Bordeaux et de sa région, de la préhistoire à nos jours.</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@museedaquitainebordeaux/featured"  target="_blank"><img src="/images/Expositions/ytb.svg" alt="YouTube"></a>
+                    <a href="https://x.com/MuseeAquitaine"><img src="/images/Expositions/x.svg" target="_blank" alt="X"></a>
+                    <a href="https://www.facebook.com/musee.aquitaine"><img src="/images/Expositions/facebook.svg" target="_blank" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/musee_aquitaine/"><img src="/images/Expositions/instagram.svg" target="_blank" alt="Instagram"></a>
+                </div>
+                <a href="#"><img class="redlogo" src="images/icons/logo_rouge.svg" alt=""></a>
+            </div>
+            
+            <div class="footer-section contact">
+                <h2>Contact</h2>
+                <p>20 Cours Pasteur, 33000 Bordeaux, France</p>
+                <p>Téléphone: <a href="tel:+33556015100">+33 5 56 01 51 00</a></p>
+                <p><a href="mailto:info@musee-aquitaine.fr">Envoyez-nous un mail</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 202  Musée d'Aquitaine. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
