@@ -1,0 +1,515 @@
+@font-face {
+    font-family: 'Neco';
+    src: url('/fonts/Neco_Complete/Fonts/OTF/Neco-Black.otf') format('opentype');
+}
+
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.logo-carre {
+    font-size: 120px; /* Grande taille par défaut */
+    font-weight: bold;
+    position: absolute; /* Positionnement absolu */
+    top: 500px; /* Ajuster pour définir l'emplacement initial */
+    left: 20%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Ajustement pour un centrage parfait */
+    color: #333;
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+.main-title {
+    margin-top: 200px;
+}
+
+.intro-section {
+    flex-direction: row;
+    width: 100%;
+}
+.banniere-exposition {
+    flex-direction: row;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Titre principal */
+.main-title, .collections-title, .tarifs-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-decoration: underline;
+    font-family: 'Neco', sans-serif;
+}
+
+.collections-title, .tarifs-title {
+    margin-top: 50px;
+}
+
+/*Mode sombre button */
+.modesombre{
+    top: 20px;
+    right: 20px;
+}
+
+.btnsombre-encadre{
+    background-color: rgb(182, 182, 182) ;
+    height: 18px;
+    width: 45px;
+    padding: 5px 8px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    transform: scale(1.2);
+    box-shadow: 2px 1px 1px #333;
+}
+
+.circle-btnsombre{
+    background-color: #fff;
+    border-radius: 50%;
+    height: 23px;
+    width: 23px;
+    top: 2px;
+    left: 4px;
+    position: absolute;
+    transition: transform 0.4s cubic-bezier(0.5, -0, 0.35, 1);
+}
+
+.button-sombre{
+    display: none;
+}
+
+.button-sombre:checked + .btnsombre-encadre .circle-btnsombre{
+    transform: translateX(30px);
+}
+
+.dark{
+    background: #333;
+}
+
+.dark nav a{
+    color: white;
+}
+
+.dark .main-title{
+    color: white;
+}
+
+.dark .collections-title{
+    color: white;
+}
+
+.dark .burger-menu{
+    color: white;
+}
+
+.dark .tarifs-title{
+    color: white;
+}
+
+/* Bouton Voir plus */
+.see-more-btn, .view-more-btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Neco', sans-serif;
+}
+
+.see-more-btn:hover, .view-more-btn:hover {
+    background-color: #FAE679;
+    transform: scale(1.05);
+}
+
+.see-more-btn:focus, .view-more-btn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Box principale */
+.box {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carrousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 130%;
+    height: 130%;
+}
+
+
+
+
+/* Boutons de navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Sous-box texte dynamique */
+.text-box {
+    width: 100%;
+    max-width: 1200px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Neco', sans-serif;
+}
+
+/* Titre de l'exposition */
+.exhibit-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    font-family: 'Neco', sans-serif;
+}
+
+/* Description sous le titre */
+.exhibit-description {
+    font-size: 16px;
+    color: #555;
+    font-family: 'Neco', sans-serif;
+}
+
+/* Section des collections */
+.collection-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Box de collection */
+.collection-box {
+    display: block;
+    width: 32%;
+    aspect-ratio: 16 / 9;
+    background: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Neco', sans-serif;
+}
+
+.collection-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.collection-box:hover .collection-image img {
+    opacity: 0.8;
+}
+
+.collection-box:hover .collection-text {
+    background-color: #FAE679;
+}
+
+/* Image de chaque box de collection */
+.collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texte de chaque box de collection */
+.collection-text {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 3px solid #FAE679;
+    font-family: 'Neco', sans-serif;
+}
+
+/* Titre de chaque collection */
+.collection-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    font-family: 'Neco', sans-serif;
+}
+
+/* Description sous le titre de la collection */
+.collection-description {
+    font-size: 16px;
+    color: #666;
+    font-family: 'Neco', sans-serif;
+}
+
+/* Style pour le conteneur du bouton */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Section des tarifs */
+.tarifs-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Box des tarifs */
+.tarif-box {
+    width: 20%;
+    background-color: #FAE679;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Neco', sans-serif;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 -5px;
+    position: relative; /* Positionner le parent en relatif pour positionner l'enfant absolu */
+}
+
+
+
+.tarif-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre de chaque tarif */
+.tarif-title {
+    font-size: 55px; /* Augmenté de 18px à 24px */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Description sous le titre de chaque tarif */
+.tarif-description {
+    font-size: 40px; /* Augmenté de 12px à 16px */
+    color: #333;
+}
+
+/* Positionnement de la description du tarif en bas de la box */
+.tarif-box .tarif-description {
+    position: absolute;
+    bottom: 50px;  /* Positionner la description à 15px du bas */
+    width: 100%;
+    font-size: 40px; /* Ajuster la taille de la police si nécessaire */
+    color: #333;
+    text-align: center;
+}
+
+/* Titre de chaque tarif dans les box jaunes */
+.tarif-box .tarif-title {
+    font-size: 120px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* Media Queries pour responsive design */
+
+/* Pour les écrans de moins de 768px (mobile) */
+@media (max-width: 768px) {
+    .main-title, .collections-title, .tarifs-title {
+        font-size: 28px;
+    }
+
+    .see-more-btn, .view-more-btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+
+    .box {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .collection-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .collection-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .carousel-images img {
+        width: 100%;
+        height: auto;
+    }
+
+    .collection-text {
+        display: none;
+    }
+}
+
+/* Pour les écrans entre 768px et 1024px (tablette) */
+@media (max-width: 1024px) {
+    .collection-box {
+        width: 48%;
+    }
+
+    .collection-row {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .carousel-images img {
+        width: 100%;
+        height: auto;
+    }
+
+    .collection-text {
+        display: none;
+    }
+}
+
+/* Pour les écrans entre 768px et 1024px (tablette) */
+@media (max-width: 1024px) {
+    .tarif-box {
+        width: 45%; /* Les box occupent 45% de la largeur */
+        margin-bottom: 20px; /* Ajout d'un espace entre les box */
+    }
+
+    .tarifs-container {
+        justify-content: space-around; /* Les box s'espacent uniformément */
+        row-gap: 20px; /* Ajout d'espace entre les lignes */
+    }
+}
+
+/* Pour les écrans de moins de 768px (mobile) */
+@media (max-width: 768px) {
+    .tarif-box {
+        width: 100%; /* Chaque box occupe toute la largeur */
+        margin-bottom: 20px; /* Espace entre les box */
+    }
+
+    .tarifs-container {
+        flex-direction: column; /* Les box sont empilées verticalement */
+        align-items: center; /* Centrer les box */
+    }
+}
+
+/* Pour les écrans de moins de 480px (petits mobiles) */
+@media (max-width: 480px) {
+    .tarif-box {
+        width: 100%; /* Toute la largeur */
+        padding: 10px; /* Réduire les marges internes */
+        font-size: 14px; /* Ajuster la taille globale du texte */
+    }
+
+    .tarif-title {
+        font-size: 20px; /* Taille du titre réduite */
+    }
+
+    .tarif-description {
+        font-size: 12px; /* Taille de la description réduite */
+    }
+
+    .tarifs-container {
+        row-gap: 15px; /* Ajouter de l'espace entre les box */
+    }
+}
+
+/* Pour les écrans de moins de 768px (mobile) */
+@media (max-width: 768px) {
+    .logo-carre {
+        display: none; /* Cacher l'élément en mode mobile */
+    }
+}
+
+/* Pour les écrans entre 768px et 1024px (tablettes) */
+@media (max-width: 1024px) {
+    .logo-carre {
+        font-size: 10vw; /* Ajuster la taille du texte en fonction de la largeur de l'écran */
+        top: -180px; /* Ajuster la position verticale pour les tablettes */
+    }
+}

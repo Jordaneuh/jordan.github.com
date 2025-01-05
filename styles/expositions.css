@@ -1,0 +1,246 @@
+
+@font-face {
+    font-family: 'Neco';
+    src: url('/fonts/Neco_Complete/Fonts/OTF/Neco-Black.otf') format('opentype');
+}
+
+* {
+    font-family: 'Neco', Arial, sans-serif; /* Remplacement général */
+}
+
+
+/* Section d'introduction */
+.intro-section {
+    margin-bottom: 5vh; /* Utiliser une unité relative à la hauteur de la fenêtre */
+}
+
+@media screen and (max-width: 960px) {
+    .intro-section {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Menu déroulant */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 5px 10px;
+}
+
+/* Animation hover */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #4a90e2;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+    font-size: 1rem;
+    color: #333;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+/* Affichage du menu au survol */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.accueil {
+    position: relative;
+}
+
+/* Carré noir en haut de la page d'exposition */
+.giga {
+    font-size: 120px; /* Grande taille par défaut */
+    font-weight: bold;
+    position: absolute; /* Positionnement absolu */
+    top: -180px; /* Ajuster pour définir l'emplacement initial */
+    left: 5%; /* Centré horizontalement */
+    color: #333;
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+
+.marge {
+    margin-top: 60px;
+}
+
+/* Général */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    height: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/* Grille */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 120px 20px;
+    width: 100%;
+    max-width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 30vh; /* Proportionnel à la hauteur pour uniformité */
+}
+
+/* Chaque élément (boîte + sous-boîte) */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Boîtes dans la grille */
+.box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: lightgray;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Images dans les boîtes */
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Sous-boîtes */
+.sub-box {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Liens dans les sous-boîtes */
+.sub-box a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.sub-box a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .sub-box {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub-box {
+        font-size: 12px;
+    }
+    .box {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* Pour les écrans de moins de 768px (mobile) */
+@media (max-width: 768px) {
+    .giga {
+        display: none; /* Cacher l'élément en mode mobile */
+    }
+}
+
+/* Pour les écrans entre 768px et 1024px (tablettes) */
+@media (max-width: 1024px) {
+    .giga {
+        font-size: 10vw; /* Ajuster la taille du texte en fonction de la largeur de l'écran */
+        top: -180px; /* Ajuster la position verticale pour les tablettes */
+    }
+}
+
+

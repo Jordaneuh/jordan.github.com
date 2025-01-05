@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Neco';
+    src: url('/fonts/Neco_Complete/Fonts/OTF/Neco-Black.otf') format('opentype');
+}
+
+
+.burger{
+    left: 100%; 
+  }
+  
+  .banniere{
+    width: 100%;
+    position: relative;
+  }
+  
+  body {
+    margin: 8px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 8px;
+    font-family: "Neco";
+}
+
+footer {
+    background-color: #d3d3d3;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: left;
+}
+
+.logo img {
+    max-width: 80px;
+    margin-right: 10px;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    order: 2;
+    margin-left: 10px;
+}
+
+.footer-text {
+    margin-top: 10px;
+    font-size: 14px;
+    order: 1;
+    margin-right: 10px;
+}
+
+.footer-container .footer-text {
+    margin-right: auto;
+}
+
+.link {
+    color: black;
+    text-decoration: underline;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 30px;
+    height: auto;
+}
+
+@media (max-width: 1069px) {
+    
+}
